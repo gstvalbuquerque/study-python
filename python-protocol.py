@@ -1,4 +1,4 @@
-#IMPLEMENTAÇÃO BÁSICA DO PYTHON PROTOCOL
+#BASIC PYTHON PROTOCOL IMPLEMENTATION
 # PEP 544 https://peps.python.org/pep-0544/
 
 from typing import List, Protocol

@@ -1,4 +1,4 @@
-#BASIC PYTHON PROTOCOL IMPLEMENTATION
+# BASIC PYTHON PROTOCOL IMPLEMENTATION
 # PEP 544 https://peps.python.org/pep-0544/
 
 from typing import List, Protocol
@@ -8,11 +8,13 @@ class Item(Protocol):
     quantity: float
     price: float
 
+
 class Product:
     def __init__(self, name: str, quantity: float, price: float):
         self.name = name
         self.quantity = quantity
         self.price = price
+
 
 class Stock:
     def __init__(self, product_name, quantity, price):
@@ -20,12 +22,15 @@ class Stock:
         self.quantity = quantity
         self.price = price
 
+
 def calculate_total(items: List[Product]) -> float:
     return sum([item.quantity * item.price for item in items])
-    
+
+
 def calculate_total_using_protocol(items: List[Item]) -> float:
     return sum([item.quantity * item.price for item in items])
-    
+
+
 product1 = Product('caixa', 2.0, 3.5)
 product2 = Product('tampa', 10, 1.99)
 stock1 = Stock('bty1', 112, 53.02)
@@ -42,3 +47,10 @@ print(total_using_protocol_products)
 
 print(total_stocks)
 print(total_using_protocol_stocks)
+
+"""
+Explanation:
+The protocol is a way to define a contract between the caller and the callee.
+The caller will know what to expect from the callee.
+The callee will know what to expect from the caller.
+"""
